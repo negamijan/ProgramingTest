@@ -51,6 +51,7 @@ print(IPv4_type[2])
 print(Date_set[3])
 print(ping_set[3])
 
+
 #サーバごとに故障判定
 #タイムアウト回数判定
 for k in range(len(IPv4_type)):
