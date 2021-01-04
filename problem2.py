@@ -38,20 +38,6 @@ for i in range(len(IPv4_type)):
             Date_set[i].append(Date[j])
             ping_set[i].append(ping[j])
 
-print(IPv4_type[0])
-print(Date_set[0])
-print(ping_set[0])
-print(IPv4_type[1])
-print(Date_set[1])
-print(ping_set[1])
-print(IPv4_type[2])
-print(Date_set[2])
-print(ping_set[2])
-print(IPv4_type[2])
-print(Date_set[3])
-print(ping_set[3])
-
-
 #サーバごとに故障判定
 #タイムアウト回数判定
 for k in range(len(IPv4_type)):
