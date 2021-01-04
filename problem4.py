@@ -91,8 +91,10 @@ for j in range(len(IPv4_type)):
 f = [[] for i in range(2)]
 for k in range(2):
     for i in range(len(ping_set[0])):
-        temp = ping_set[0+2*k][i] == ping_set[1+2*k][i]
-        f[k].append(temp)
+        if ping_set[0+2*k][i] == "-" and ping_set[1+2*k][i] == "-":
+            f[k].append(True)
+        else:
+            f[k].append(False)
 
     for i in range(len(f[k])):
         if f[k][i] == True:
