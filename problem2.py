@@ -5,7 +5,7 @@
 """
 
 #タイムアウト回数
-N = 1
+N = 3
 
 #ログファイルからデータを取得
 f = open('log.txt', 'r')
@@ -45,9 +45,10 @@ for k in range(len(IPv4_type)):
         if ping_set[k][i] == '-':
             if ping_set[k][i+1] == '-' and ping_set[k][i-1] != '-':
                 for j in range(len(ping_set[k])-i-1):
-                    if ping_set[k][i+1+j] != '-' and j >= N:
-                        print("故障サーバ" + IPv4_type[k])
-                        print("故障期間" + Date_set[k][i] + "〜" + Date_set[k][i+1+j])
+                    if ping_set[k][i+1+j] != '-':
+                        if j + 1 >= N:
+                            print("故障サーバ" + IPv4_type[k])
+                            print("故障期間" + Date_set[k][i] + "〜" + Date_set[k][i+1+j])
                         break
 
             elif N==1 and ping_set[k][i+1] != '-' and ping_set[k][i-1] != '-':
